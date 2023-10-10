@@ -1,0 +1,35 @@
+
+#include <iostream>
+using namespace std;
+
+bool isFactorial(int number, int factorial) {
+	int fact = 1;
+	int i = 1;
+
+	// Вычисляем факториал числа
+	while (fact < number) {
+		fact *= i;
+		i++;
+	}
+
+	// Проверяем, совпадает ли вычисленный факториал с заданным числом
+	return fact == number;
+}
+
+int main() {
+	setlocale(0, "");
+	int number, factorial;
+	cout << "Введите число: ";
+	cin >> number;
+	cout << "Введите возможный факториал: ";
+	cin >> factorial;
+
+	if (isFactorial(number, factorial)) {
+		cout << "Введенное число является факториалом числа " << factorial << endl;
+	}
+	else {
+		cout << "Введенное число не является факториалом числа " << factorial << endl;
+	}
+
+	return 0;
+}
