@@ -1,0 +1,24 @@
+
+#include <iostream>
+using namespace std;
+
+bool isCentury(int year) {
+	// Проверяем, является ли год вековым
+	return year % 100 == 0;
+}
+
+int main() {
+	setlocale(0, "");
+	int year;
+	cout << "Введите год: ";
+	cin >> year;
+
+	if (isCentury(year)) {
+		cout << "Введенный год является вековым." << endl;
+	}
+	else {
+		cout << "Введенный год не является вековым." << endl;
+	}
+
+	return 0;
+}
