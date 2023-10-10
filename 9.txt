@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+bool isPerfectNumber(int number) {
+	int sum = 1;
+
+	// Находим сумму всех делителей числа (кроме самого числа)
+	for (int i = 2; i <= number / 2; i++) {
+		if (number % i == 0) {
+			sum += i;
+		}
+	}
+
+	// Проверяем, является ли число совершенным
+	return sum == number;
+}
+
+int main() {
+	setlocale(0, "");
+	int number;
+	cout << "Введите число: ";
+	cin >> number;
+
+	if (isPerfectNumber(number)) {
+		cout << "Введенное число является совершенным" << endl;
+	}
+	else {
+		cout << "Введенное число не является совершенным" << endl;
+	}
+
+	return 0;
+}
